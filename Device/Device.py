@@ -1,15 +1,18 @@
 import psutil
 import time
-import os
+import Process
 
 
 class Device:
 
-    cpu_usage = 0.0
-    usage_per_core = []
-    memory_usage = 0.0
-    cpu_temperature = 0.0
-    pid = []
+    def __init__(self):
+        self.cpu_usage = 0.0
+        self.pid = []
+        self.memory_usage = 0.0
+        self.cpu_temperature = 0.0
+        self.pid_cpu = []
+        self.pid_memory = []
+        self.process_manager = Process.ProcessManager()
 
     @property
     def cpu_usage(self):
